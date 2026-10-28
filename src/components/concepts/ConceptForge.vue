@@ -7,7 +7,6 @@ import type { PlanId } from 'src/types/gym';
 import DemoNotice from 'src/components/shared/DemoNotice.vue';
 import PhotoSlot from 'src/components/shared/PhotoSlot.vue';
 import PlanPrice from 'src/components/shared/PlanPrice.vue';
-import WhatsAppButton from 'src/components/shared/WhatsAppButton.vue';
 const emit = defineEmits<{ enroll: [planId: PlanId | null] }>();
 function choose(id: PlanId) { emit('enroll', id); }
 </script>

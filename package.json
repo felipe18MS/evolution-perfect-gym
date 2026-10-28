@@ -1,0 +1,37 @@
+{
+  "name": "evolution-perfect-gym-showcase",
+  "productName": "Evolution Perfect Gym — Design Showcase",
+  "productDescription": "Diez propuestas de página web para Evolution Perfect Gym (Florencia, Caquetá). Contenido de demostración.",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "lint": "eslint -c ./eslint.config.js \"./src/**/*.{ts,vue}\" ./quasar.config.ts",
+    "typecheck": "vue-tsc --noEmit",
+    "postinstall": "quasar prepare",
+    "check:assets": "node scripts/check-assets.mjs"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.16",
+    "quasar": "^2.17.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@quasar/app-vite": "^2.0.0",
+    "@types/node": "^20.14.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "globals": "^15.12.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.72.1",
+    "vue-tsc": "^3.3.13"
+  },
+  "engines": {
+    "node": "^20 || ^22 || ^24",
+    "npm": ">= 6.13.4"
+  }
+}

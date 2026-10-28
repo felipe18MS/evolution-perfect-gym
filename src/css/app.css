@@ -1,0 +1,56 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Base común de las páginas comerciales simuladas */
+.site { min-width: 0; overflow-x: clip; line-height: 1.55; background: var(--c-bg); color: var(--c-fg); }
+.site h2, .site h3, .site h4, .site p, .site ul, .site ol, .site blockquote, .site figure { margin: 0; }
+.site ul, .site ol { padding: 0; list-style: none; }
+.site img { max-width: 100%; display: block; }
+.site button { font: inherit; color: inherit; }
+.site :focus-visible { outline: 3px solid var(--c-focus, #a3e635); outline-offset: 2px; }
+.site .q-expansion-item :focus-visible, .site .q-field :focus-visible { outline-offset: 0; }
+
+.sec { padding: 3rem 1.25rem; padding-inline: clamp(1rem, 5cqw, 3rem); padding-block: clamp(2.5rem, 7cqw, 5rem); }
+.wrap { max-width: 1200px; margin-inline: auto; }
+.muted { color: var(--c-muted); }
+.row { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.cx-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px;
+  padding: .6rem 1.4rem; border: 2px solid var(--c-accent); background: var(--c-accent); color: var(--c-on-accent);
+  font: inherit; font-weight: 700; cursor: pointer; text-decoration: none; border-radius: var(--c-radius, 4px);
+  transition: transform .15s ease, filter .15s ease;
+}
+.cx-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.cx-btn--ghost { background: transparent; color: var(--c-fg); border-color: currentColor; }
+.cx-btn--block { width: 100%; }
+
+/* Navegación responsive compartida (se adapta al ancho de la vista previa) */
+.sburger {
+  display: none; align-items: center; justify-content: center; min-width: 44px; min-height: 44px;
+  background: none; border: 2px solid currentColor; border-radius: 4px; cursor: pointer; font-size: 1.3rem;
+}
+.snav { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem; }
+.snav button:not(.cx-btn) { background: none; border: 0; padding: .5rem .7rem; min-height: 44px; cursor: pointer; }
+.snav button:not(.cx-btn):hover { text-decoration: underline; text-underline-offset: 4px; }
+@container (max-width: 960px) {
+  .sburger { display: inline-flex; }
+  .snav { display: none; flex-direction: column; align-items: stretch; width: 100%; }
+  .snav.open { display: flex; }
+  .snav button { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+
+/* Contraste explícito para que el texto de los CTA nunca herede un color ilegible. */
+.site .cx-btn { color: var(--c-on-accent, #ffffff) !important; }
+.site .cx-btn--ghost { color: var(--c-fg, #101010) !important; background: transparent !important; }
+.site .cx-btn:disabled { opacity: .58; }
+.site button:focus-visible, .site a:focus-visible { outline: 3px solid var(--c-focus, #a3e635); outline-offset: 3px; }
+.extra .extra__button { color: #171916 !important; }
+.extra .extra__quote .extra__button { color: #ffffff !important; background: #171916 !important; border-color: #171916 !important; }
+.co .co__btn--primary { color: #ffffff !important; background: #101010 !important; }
+.co .co__btn:not(.co__btn--primary) { color: #101010 !important; background: #ffffff !important; }
